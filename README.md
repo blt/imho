@@ -9,7 +9,7 @@
 >
 > My fellow Kerbals, has anyone heard the Mun actually decline an invitation? No? Perhaps it's just been really busy?
 
--- President John F. Kerbin
+-- President John F. Kerman
 
 ## Welcome!
 
