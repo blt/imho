@@ -1,10 +1,13 @@
+# Design Philosophy
+
 The Apollo spacecraft that took humans back and forth to the Moon from 1969 to
 1972 was a hybrid craft. In many of its systems it was fully automatic, being
 controlled by a sophisticated suite of real-time programs running in the Apollo
-Guidance Computer. [[RCS jets|Terminology]] were fired solely by the computer,
-for instance. These automatic systems were "flown" by the human crew, preserving
-the human pilots as the supreme authority in the craft. While RCS trimming was
-controlled by the computer, the pilots set the attitude goals.
+Guidance Computer. [RCS jets](https://en.wikipedia.org/wiki/Reaction_control_system)
+were fired solely by the computer, for instance. These automatic systems were
+"flown" by the human crew, preserving the human pilots as the supreme authority
+in the craft. While RCS trimming was controlled by the computer, the pilots set
+the attitude goals.
 
 Automation excels at repeating the same well-understood task without error but
 it is entirely unable to improvise and will have do Bad Things should the
@@ -33,7 +36,7 @@ few essential variables to be kept under control:
   * landing site must be relatively flat
 
 This last point, with the equipment available in the lander, is an essentially
-human action. The project default landing script [land.ks](...) leaves all three
+human action. The project default landing script [land.ks](../assets/scripts/land.ks) leaves all three
 points under human control but reduces the tedium--and error--involved in
 controlling the first two. A smooth landing still requires significant practice
 but you're less likely to become a permanent fixture on the Mun.
