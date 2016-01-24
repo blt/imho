@@ -17,6 +17,6 @@ Suggested current mission profile involves the use of the following programs:
   * transfer -- calculate and execute CM transfer to Kerbin
   * [MANUAL] re-entry -- re-enter Kerbin atmosphere, splash-down and enjoy parades
 
-The careful reader will note that this is more manual than note. While maneuver
+The careful reader will note that this is more manual than not. While maneuver
 nodes are created there is not automatic execution of such. Rendezvous, a
 complicated, error prone and time consuming maneuver, is entirely manual.
