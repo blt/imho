@@ -1,9 +1,9 @@
 // launch -- get from ground to orbit on a column of fire
 //
-// This launch script will take a multi-stage rocket from the Kerbal Space
+// This launch program will take a multi-stage rocket from the Kerbal Space
 // Center up to parameter target_apoapsis, fuel and aerodynamic properties
 // allowing. Max Q and friction heating with the atmosphere are not considered.
-// This script will just plow right on through at full speed.
+// This program will just plow right on through at full speed.
 //
 // Parameters:
 //   * target_apoapsis :: apoapsis of eventual (roughly circular) orbit
@@ -17,7 +17,6 @@
 //     target is raised.
 //
 // Procedure List:
-//
 //   1. Determine that payload is secured.
 //   2. Launch.
 //
@@ -25,7 +24,6 @@
 //
 //   > run launch(95000).
 //
-
 
 // We want to trim the ship, to put it in a known condition before starting out.
 //
@@ -42,6 +40,11 @@ RCS off.
 // It's embarrassing to hover 600 tons and topple it over in the wind. Also:
 // deadly.
 lock throttle to 0.
+
+// 'on' allow us to run actions for user inputs. In this case, we run on action
+// group 9 and exit the program by setting the runmode to 0. Other programs make
+// more sophisticated use of 'on'.
+on ag9 { set runmode to 0. }
 
 clearscreen.
 

@@ -1,4 +1,34 @@
-//Set the ship to a known configuration
+// transfer -- search for a Hohmann transfer from Mun to Kerbin
+//
+// This program will perform compute the delta-v requirements for a Hohmann
+// transfer between the current body of SOI to some target, specified as a
+// parameter. The ideal launch window to satisfy this delta-v requirement is
+// then searched for along the craft's present orbit.
+//
+// Parameters:
+//   * target :: the body to transfer to from craft's present body
+//   * target_periapsis :: desired periapsis at target body
+//
+// Concerns:
+//   * This program does _not_ calculate a free return orbit! Resulting orbit
+//     may not even be in initial body's SOI, let along re-intercept with initial
+//     body.
+//   * Manuver node delta-v is not checked against craft delta-v.
+//   * If target periapsis is < 1000 m resulting orbit may intercept with target
+//     body.
+//   * This program has only been tested in transfers from Kerbin to Mun. But
+//     the software group feels _very_ confident in how clever they are.
+//
+// Procedure List:
+//   1. Attain circular orbit around present orbital body.
+//   2. Execute transfer.
+//   3. Determine if desirable inseration.
+//
+// Example Run:
+//
+//   > run transfer(Mun, 25000).
+//
+
 SAS on.
 RCS off.
 lights off.
@@ -6,16 +36,6 @@ lock throttle to 0. //Throttle is a decimal from 0.0 to 1.0
 gear off.
 
 clearscreen.
-
-// WARNING: This does _not_ calculate a free-return orbit! Resulting orbit may
-// not even be in Kerbin's SOI, let alone re-intercept with Kerbin's atmosphere.
-//
-// WARNING: Maneuver node delta-v is _not_ checked against craft delta-v.
-//
-// FUN FACT: If target periapsis is < 1000 resulting orbit may intercept munar
-// regolith.
-//
-// RUDE SURPRISE: Transfers from Mun to Kerbin do _not_ work.
 
 declare parameter target,target_periapsis.
 SET step TO 0.001.
@@ -41,9 +61,9 @@ until runmode = 0 {
                 SET d_ang to ship_ang - tgt_ang.
                 SET d_time to d_angle/d_ang.
 
-                SET my_dV to sqrt (target:BODY:MU/ship_radius) * (sqrt((2* tgt_radius)/(ship_radius + tgt_radius)) - 1).
+                SET dV to sqrt (target:BODY:MU/ship_radius) * (sqrt((2* tgt_radius)/(ship_radius + tgt_radius)) - 1).
 
-                SET ht_node TO NODE(time:seconds+d_time, 0, 0, my_dV).
+                SET ht_node TO NODE(time:seconds+d_time, 0, 0, dV).
                 ADD ht_node.
 
                 SET tgt_incl to 0.
@@ -66,7 +86,7 @@ until runmode = 0 {
         }
 
 
-        else if runmode = 3 {
+        else if runmode = 3 { // search for acceptable node time
                 set loops to 0.
                 until (abs(current_periapsis - target_periapsis) < 1000)
                       AND (current_inclination > tgt_incl) {
