@@ -27,7 +27,7 @@ of Project Apollo-style "pilot in the loop" control systems. The idea is to
 program guidance computers and fly the rockets they're guiding without blowing
 yourself up.
 
-Please take a gander at [Design Philosophy](docs/Design-Philosophy) if "pilot in
+Please take a gander at [Design Philosophy](docs/Design-Philosophy.md) if "pilot in
 the loop" sounds unfamiliar.
 
 ### Sign me up!
