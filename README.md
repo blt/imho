@@ -19,8 +19,9 @@ of Project Apollo-style "pilot in the loop" control systems. The idea is to
 program guidance computers and fly the rockets they're guiding without blowing
 yourself up.
 
-Please take a gander at [Design Philosophy](HERE) if "pilot in the loop" sounds
-unfamiliar.
+Please take a gander at
+[Design Philosophy](https://github.com/blt/imho/wiki/Design-Philosophy) if
+"pilot in the loop" sounds unfamiliar.
 
 ### Sign me up!
 
@@ -37,8 +38,8 @@ tested.) Installing KSP should be straightforward but ask for help if you need.
 Third things ordered In The Way You Expect, you will also need a copy of
 [kOS](https://github.com/KSP-KOS/KOS), the flight computer this project uses,
 version v0.18.2. Setting kOS up properly is a little finicky but totally doable.
-There's a [wiki page](HERE) to walk you through the installation with operating
-system specific information.
+There's a [wiki page](https://github.com/blt/imho/wiki/Installation) to walk you
+through the installation with operating system specific information.
 
 ### Let's get to Flying!
 

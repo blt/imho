@@ -2,7 +2,7 @@ clearscreen.
 SAS on.
 RCS on.
 
-set vT to -100. // In runmode 2 this is the height target.
+set vT to -500. // In runmode 2 this is the height target.
                 // You're welcome.
 
 copy PID from 0.
