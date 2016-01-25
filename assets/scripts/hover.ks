@@ -2,7 +2,7 @@ clearscreen.
 SAS on.
 RCS on.
 
-set seekAlt to ship:altitude.
+set seekAlt to round(ship:altitude).
 
 copy PID from 0.
 run PID.
@@ -11,6 +11,8 @@ on ag1 { set seekAlt to seekAlt -10. preserve. }.
 on ag2 { set seekAlt to seekAlt - 1. preserve. }.
 on ag3 { set seekAlt to seekAlt + 1. preserve. }.
 on ag4 { set seekAlt to seekAlt +10. preserve. }.
+
+on ag9 { set runmode to 0. }
 
 set ship:control:pilotmainthrottle to 0.
 

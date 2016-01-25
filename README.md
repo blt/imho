@@ -54,6 +54,11 @@ finicky but totally doable. Download and unzip the
 disk. Move unzipped release to `$KSP/GameData/kOS`. If you do this while Kerbal
 Space Program is running you'll need to restart it for the mod to show up.
 
+Now that kOS is installed, you're going to want to be familiar with its
+reference documentation, [here](https://ksp-kos.github.io/KOS_DOC/). We'll go
+through some scripts so the stock tutorials won't come much into play but it's
+an invaluable reference.
+
 To be sure we're all working from the same basic world, the folder `assets/IMHO`
 contains the save-file we'll be using. This whole folder should be copied to
 `$KSP/saves`. The folder `assets/scripts/` should be symlinked to

@@ -1,4 +1,6 @@
-# Mission Profile
+# Mission Profiles
+
+## Lunar Landing
 
 Suggested current mission profile involves the use of the following programs:
 
